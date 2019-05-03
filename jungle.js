@@ -84,8 +84,8 @@ class tigers extends animals {
 }
 
 class monkeys extends animals{
-    constructor (energy){
-      super(energy);
+    constructor (){
+      super();
       cMonkey++;
     }
     makeNoise(){
@@ -120,7 +120,26 @@ class monkeys extends animals{
 
   }
 
-  // class jungle
+  class jungle extends animals{
+    constructor(type, num){
+      
+      super();
+      this.type = type;
+      this.num = num;
+        for(let i = 0; i < num; i++){
+          let sp = this.type + [i]
+           console.log(sp)
+          //  console.log(this.type)
+           sp = new tigers();
+           new tigers();
+          sp.makeNoise();          
+        }
+        
+    }
+  }
+ 
+
+
 
   // sound off.. loop thorugh array
 
@@ -155,3 +174,8 @@ console.log(monkeys1.play());
 
 let snakes1 = new snakes();
 snakes1.count();
+
+let tigera = new jungle ("tigers", 3);
+let snake = new jungle ("snakes", 1);
+let monkey = new jungle ("monkey", 1);
+console.log(tigera, snake, monkey)
